@@ -57,7 +57,9 @@ const downloadComment = require('./downloadComment.js');
                 articleInfo.commentsArr = commentsArr;
             };
             // 替换文章名称的 / 线， 解决路径被分割的问题
-            let useArticleTtle = columnArticle.article_title.replace(/\//g, '-');
+            // 替换文件名中不能包含的字符
+            let pat = /\/|\||\\|:|\*|\?|"|<|>/g;
+            let useArticleTtle = columnArticle.article_title.replace(/ /g, '').replace(pat, ' ');
             //生成PDF 
             await generaterPdf(articleInfo,
                 useArticleTtle + '.pdf',

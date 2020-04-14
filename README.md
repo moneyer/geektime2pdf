@@ -1,6 +1,8 @@
 # 极客时间专栏转换为PDF
 
 >说明：该项目仅仅只能用户个人学习使用，不能在商业中使用，若极客时间官方要求该代码仓库删除，请联系我进行删除
+>说明：该项目原项目为[jjeejj的geektime2pdf](https://github.com/jjeejj/geektime2pdf)，此处对项目做了文件名的兼容，并修改了部分readme文档（使用了我的仓库，
+>新增了cookie的取值
 
 ## 使用方法
 
@@ -30,11 +32,13 @@ module.exports = {
 
 * `firstArticalId` 这个参数最好配置专栏第一篇文章的 `ID` ，这个可以获取专栏的所有的文章,若不是第一篇文章的`ID` 则获取的是该文章以及之后的文章
 
-* `cookie` 你在网页版登录后返回的`cookie`信息
+* `cookie` 你在网页版登录后返回的`cookie`信息，找一个请求（请求头`Request Headers`中含`Cookie`）的，就是`Cookie`中的字符串，如下图红框
+
+![](./image/geektime_cookie.jpg)
 
 ### 运行
 
-1. `git clone git@github.com:jjeejj/geektime2pdf.git` 在本地克隆下来
+1. `git clone git@github.com:moneyer/geektime2pdf.git` 在本地克隆下来
 2. 然后执行 `npm i` 安装依赖
 3. 运行主程序 `node columnArticleList.js` 等待一段时间,生成 `PDF` 完成
 
